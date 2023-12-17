@@ -4,40 +4,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Flex布局</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            background-color: rgb(212, 212, 212);
+        }
+
+        /* * {
+            border: 1px solid black;
+        } */
+
+        .flex {
+            display: flex;
+        }
+
+        .baiSe {
+            background-color: white;
+        }
+
+        .flex1 {
+            flex: 1;
+        }
+
+        .column {
+            flex-direction: column;
+        }
+
+        .mg8 {
+            margin: 8px;
+        }
+
+        .mgr8 {
+            margin-right: 8px;
+        }
+
+        .mgt8 {
+            margin-top: 8px;
+        }
+
+        .yinYing {
+            box-shadow: 10px 10px 5px #888888;
+        }
+
+        .juzhong {
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .daoHang {
+            padding: 10px 20px;
+            border-bottom: 1px solid #999;
+            font-size: 15px;
+            color: #666;
+        }
+
+        /* 当屏幕小于600px时（手机），要改变的css */
+        @media (max-width:600px) {
+            .ceBian {
+                display: none;
+            }
+
+            .neiRong {
+                flex-direction: column;
+            }
+
+            .shuJu {
+                flex-direction: column;
+            }
+            .youQuDduiQi{
+                margin-left: 8px;
+            }
+        }
+    </style>
+
 </head>
 
-<body>
-    <div style="
-        background-color: #f1f1f1;
-        text-align: center;
-        ">
-        <img src="cup.png" alt="中国石油大学（北京）校徽" width=80px>
-    </div>
-    <div style="
-        max-width: 700px;
-        margin: auto;
-        padding: 15px;
-        line-height: 1.7;
-        text-align: center;
-    ">
-        <p>我的网站</p>
-        <p>我的网站</p>
-        <p>我的网站</p>
-        <p>我的网站</p>
-        <p>我的网站</p>
-        <p>我的网站</p>
-        <p>我的网站</p>
+<body class="flex">
+    <!--侧边栏-->
+    <div style="width: 200px;" class="baiSe yinYing mg8 ceBian">
+        <!--头像栏-->
+        <div style="padding: 10px;border-bottom: 1px solid #999;" class="flex1 juzhong">
+            <img src="cup.png" width="60px" alt="中国石油大学（北京）校徽">
+            <div style="color: #888;" class="juzhong">
+                <p>中国石油大学（北京）</p>
+            </div>
+        </div>
+        <!--导航栏-->
+        <div class="flex1">
+
+            <div class="daoHang">导航</div>
+            <div class="daoHang">导航</div>
+            <div class="daoHang">导航</div>
+            <div class="daoHang">导航</div>
+        </div>
 
     </div>
-    <div style="
-        background-color: #f1f1f1;
-        text-align: center;
-        ">
-        <p>原油和天然气介绍网站</p>
-        <a href="">友情链接</a>
-    </div>
+    <!--主区域-->
+    <div class="flex1 flex column">
+        <!--头部栏-->
+        <div style="height: 60px;" class="baiSe yinYing mg8"></div>
+        <!--内容栏-->
+        <div class="flex1 flex mg8 neiRong">
+            <!--左区-->
+            <div style="flex: 3;" class="flex column ">
+                <!--数据区-->
+                <div class="flex mg8 shuJu">
+                    <div style="height: 100px;" class="flex1 baiSe yinYing mgr8 juzhong">数据块</div>
+                    <div style="height: 100px;" class="flex1 baiSe yinYing mgr8 juzhong">数据块</div>
+                    <div style="height: 100px;" class="flex1 baiSe yinYing mgr8 juzhong">数据块</div>
+                    <div style="height: 100px;" class="flex1 baiSe yinYing juzhong ">数据块</div>
+                </div>
+                <!--列表区-->
+                <div class="flex column mg8">
+                    <div style="height: 160px;" class="baiSe yinYing  juzhong">数据块2</div>
+                    <div style="height: 160px;" class="baiSe yinYing mgt8 juzhong">数据块2</div>
+                    <div style="height: 160px;" class="baiSe yinYing mgt8 juzhong">数据块2</div>
 
+                </div>
+
+            </div>
+            <!--右区-->
+            <div style="flex: 1;" class="flex column youQuDduiQi ">
+                <!--提示区-->
+                <div style="height:20%;" class="baiSe mg8 yinYing"></div>
+                <!--消息区-->
+                <div style="height: 80%;" class="baiSe mg8 yinYing"></div>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
